@@ -1,38 +1,41 @@
-<x-app-layout>
-    <nav class="bg-gradient-to-r from-blue-900 to-blue-500 p-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10 w-auto"> <!-- Cambia el path si es necesario -->
-                <span class="text-yellow-400 font-bold uppercase text-sm">New Rubber</span>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container-fluid px-4">
+        <!-- Logo a la izquierda -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="{{ asset('images/logo-new-rubber.png') }}" alt="New Rubber" class="me-2" style="height: 80px;">
+            <span class="fw-bold text-warning text-uppercase fs-4">New Rubber Servicios Generales EIRL</span>
+        </a>
 
-            <!-- Enlaces -->
-            <div class="hidden md:flex space-x-6 text-white font-medium">
-                <a href="{{ route('home') }}" class="hover:text-yellow-400">Inicio</a>
-                <a href="{{ route('services') }}" class="hover:text-yellow-400">Servicios</a>
-                <a href="{{ route('about') }}" class="hover:text-yellow-400">Quiénes Somos</a>
-                <a href="{{ route('projects') }}" class="hover:text-yellow-400">Proyectos</a>
-                <a href="{{ route('contact') }}" class="hover:text-yellow-400">Contacto</a>
-            </div>
+        <!-- Botón responsive (hamburguesa) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Buscador e inicio de sesión -->
-            <div class="flex items-center space-x-4">
-                <!-- Buscador -->
-                <div class="relative">
-                    <input type="text" placeholder="Buscar..." class="rounded-full px-4 py-1 pl-6 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm">
-                    <span class="absolute right-3 top-1.5 text-gray-500">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
-                        </svg>
-                    </span>
-                </div>
+        <!-- Contenido de barra -->
+        <div class="collapse navbar-collapse justify-content-between" id="mainNavbar">
+            <!-- Menú centrado -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="#quienes-somos">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="#proyectos">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="#contacto">Contacto</a>
+                </li>
+            </ul>
 
-                <!-- Botón Iniciar Sesión -->
-                <a href="{{ route('login') }}" class="border border-blue-200 text-white px-4 py-1 rounded-full hover:bg-blue-600 transition text-sm">
-                    Iniciar Sesión
-                </a>
+            <!-- Botón login a la derecha -->
+            <div class="d-flex">
+                <a href="#login" class="btn btn-warning btn-sm fs-5">Iniciar Sesión</a>
             </div>
         </div>
-    </nav>
-</x-app-layout>
+    </div>
+</nav>
